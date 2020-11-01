@@ -164,7 +164,7 @@ Now you can build and run the demo. Output is available by connecting any serial
 To check if data ingestion from our edge devices is working, we can simply go to AWS Console -\&gt; IoT Core -\&gt; Test and subscribe to the following topics:
 
 ```
-sensors/stm32\_board\_1/data 
+sensors/stm32_board_1/data 
 ```
 // (data from the STM32 board)
 
