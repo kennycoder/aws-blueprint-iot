@@ -4,6 +4,17 @@ The goal of this blueprint is to show how sensor data can be ingested into AWS C
 
 ![](https://d268s23yov0ww.cloudfront.net/iot-predictive-maintenance-blueprint/stm32-gg-iotcore-diagram.png)
 
+Parts used in this example:
+
+- https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html
+- https://www.raspberrypi.org/products/raspberry-pi-zero-w/
+- https://www.dfrobot.com/product-78.html
+- MicroUSB cable, OTG MicroUSB cable, Mini HDMI to HMI cable. 
+- 64GB microSD card
+
+![](https://d268s23yov0ww.cloudfront.net/iot-predictive-maintenance-blueprint/1604241530429.jpg)
+
+
 STM32 board running FreeRTOS is responsible for sending sensor data through AWS Greengrass to Amazon IoT Core.
 
 AWS Greengrass core has a simple touch sensor connected to a GPIO port. A Lambda function is running that triggers reading state of the GPIO port and publishes the status to a dedicated topic. The purpose is to demonstrate that devices running AWS Greengrass software can also interact with locally attached resources and publish the data to the cloud.
