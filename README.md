@@ -134,7 +134,7 @@ Last step of this process is to deploy this configuration from your AWS Manageme
 
 # Connecting Amazon FreeRTOS device (STM32 board) to AWS IoT Greengrass
 
-Demo application for this blueprint can be downloaded from [here](https://d268s23yov0ww.cloudfront.net/iot-predictive-maintenance-blueprint/stm32-blueprint-demo-FreeRTOS.zip) and it&#39;s based on FreeRTOS available from AWS console -\&gt; AWS IoT -\&gt; Software -\&gt; FreeRTOS Device Software -\&gt; Connect to AWS IoT - STM32-B-L475E-I.
+Demo application for this blueprint can be downloaded from [here](https://d268s23yov0ww.cloudfront.net/iot-predictive-maintenance-blueprint/stm32-blueprint-demo-FreeRTOS.zip) and it&#39;s based on FreeRTOS available from AWS console -> AWS IoT -> Software -> FreeRTOS Device Software -> Connect to AWS IoT - STM32-B-L475E-I.
 
 To run this demo you need to modify only two files: _aws\_clientcredential.h_ and _aws\_clientcredential\_keys.h_
 
@@ -163,7 +163,7 @@ Now you can build and run the demo. Output is available by connecting any serial
 
 # Testing the blueprint
 
-To check if data ingestion from our edge devices is working, we can simply go to AWS Console -\&gt; IoT Core -\&gt; Test and subscribe to the following topics:
+To check if data ingestion from our edge devices is working, we can simply go to AWS Console -> IoT Core -> Test and subscribe to the following topics:
 
 ```
 sensors/stm32_board_1/data 
