@@ -15,7 +15,7 @@ Parts used in this example:
 ![](https://d268s23yov0ww.cloudfront.net/iot-predictive-maintenance-blueprint/1604241530429.jpg)
 
 
-STM32 board running FreeRTOS is responsible for sending sensor data through AWS Greengrass to Amazon IoT Core.
+STM32 board running FreeRTOS is responsible for sending sensor data through AWS Greengrass to Amazon IoT Core. It uses Greengrass Discovery RESTFul API to connect to a local Greengrass device via local network. This way your devices only send the data through Greengrass instead of direct conneciton to AWS Iot Core.
 
 AWS Greengrass core has a simple touch sensor connected to a GPIO port. A Lambda function is running that triggers reading state of the GPIO port and publishes the status to a dedicated topic. The purpose is to demonstrate that devices running AWS Greengrass software can also interact with locally attached resources and publish the data to the cloud.
 
@@ -134,7 +134,7 @@ Last step of this process is to deploy this configuration from your AWS Manageme
 
 # Connecting Amazon FreeRTOS device (STM32 board) to AWS IoT Greengrass
 
-Demo application for this blueprint can be downloaded from here and it&#39;s based on FreeRTOS available from AWS console -\&gt; AWS IoT -\&gt; Software -\&gt; FreeRTOS Device Software -\&gt; Connect to AWS IoT - STM32-B-L475E-I.
+Demo application for this blueprint can be downloaded from [here](https://d268s23yov0ww.cloudfront.net/iot-predictive-maintenance-blueprint/stm32-blueprint-demo-FreeRTOS.zip) and it&#39;s based on FreeRTOS available from AWS console -\&gt; AWS IoT -\&gt; Software -\&gt; FreeRTOS Device Software -\&gt; Connect to AWS IoT - STM32-B-L475E-I.
 
 To run this demo you need to modify only two files: _aws\_clientcredential.h_ and _aws\_clientcredential\_keys.h_
 
@@ -153,6 +153,8 @@ Also modify _aws\_clientcredential.h_ with the endpoint from your AWS IoT Core s
 static const char clientcredentialMQTT_BROKER_ENDPOINT[] = "YOUR_ENDPOINT.iot.REGION.amazonaws.com";
 
 ```
+
+as well as your Wifi credentials and thing name in case it was modified.
 
 
 To build the demo you can use STM32CubeIDE freely available from [https://www.st.com/en/development-tools/stm32cubeide.html](https://www.st.com/en/development-tools/stm32cubeide.html)
